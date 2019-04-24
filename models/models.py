@@ -1,6 +1,7 @@
-### Copyright (C) 2017 NVIDIA Corporation. All rights reserved. 
-### Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+# Copyright (C) 2017 NVIDIA Corporation. All rights reserved.
+# Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
 import torch
+
 
 def create_model(opt):
     if opt.model == 'pix2pixHD':
@@ -10,8 +11,8 @@ def create_model(opt):
         else:
             model = InferenceModel()
     else:
-    	from .ui_model import UIModel
-    	model = UIModel()
+        from .ui_model import UIModel
+        model = UIModel()
     model.initialize(opt)
     if opt.verbose:
         print("model [%s] was created" % (model.name()))
